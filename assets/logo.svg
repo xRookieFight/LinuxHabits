@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <path fill="none" stroke="#D5DAE0" stroke-width="8" stroke-linejoin="round" d="M128,26 C192,26 216,104 216,154 C216,208 178,232 128,232 C78,232 40,208 40,154 C40,104 64,26 128,26 Z"/>
+  <path fill="#F7A928" d="M70,226 C70,214 84,208 104,212 C116,214 118,228 108,234 C96,240 70,240 70,226 Z M186,226 C186,214 172,208 152,212 C140,214 138,228 148,234 C160,240 186,240 186,226 Z"/>
+  <path fill="#1E2329" d="M128,26 C192,26 216,104 216,154 C216,208 178,232 128,232 C78,232 40,208 40,154 C40,104 64,26 128,26 Z"/>
+  <rect x="78" y="112" width="100" height="100" rx="24" fill="#FFFFFF"/>
+  <g fill="#0A84E0">
+    <rect x="86" y="120" width="38" height="38" rx="7"/>
+    <rect x="132" y="120" width="38" height="38" rx="7"/>
+    <rect x="86" y="166" width="38" height="38" rx="7"/>
+    <rect x="132" y="166" width="38" height="38" rx="7"/>
+  </g>
+  <circle cx="107" cy="74" r="10" fill="#FFFFFF"/>
+  <circle cx="149" cy="74" r="10" fill="#FFFFFF"/>
+  <path fill="#F7A928" d="M110,90 Q128,86 146,90 Q140,104 128,108 Q116,104 110,90 Z"/>
+</svg>
