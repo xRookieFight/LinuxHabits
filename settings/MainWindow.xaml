@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="LinuxHabits.Settings.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="LinuxHabits">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitleBar" Orientation="Horizontal" Padding="16,0" Spacing="10">
+            <Image Source="ms-appx:///Assets/logo-256.png" Width="18" Height="18" VerticalAlignment="Center" />
+            <TextBlock Text="LinuxHabits" VerticalAlignment="Center" Style="{StaticResource CaptionTextBlockStyle}" />
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1">
+            <StackPanel MaxWidth="820" Padding="36,4,36,36" Spacing="4">
+                <TextBlock Text="Settings" Style="{StaticResource TitleTextBlockStyle}" />
+
+                <TextBlock Text="General" Style="{StaticResource SettingsSectionStyle}" />
+
+                <Border Style="{StaticResource SettingsCardStyle}">
+                    <Grid ColumnSpacing="16">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <FontIcon Glyph="&#xE9F5;" FontSize="20" />
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock Text="Background service" />
+                            <TextBlock x:Name="ServiceStatusText" Style="{StaticResource SettingsDescriptionStyle}" />
+                        </StackPanel>
+                        <Button x:Name="ServiceButton" Grid.Column="2" MinWidth="96" Click="ServiceButton_Click" />
+                    </Grid>
+                </Border>
+
+                <Border Style="{StaticResource SettingsCardStyle}">
+                    <Grid ColumnSpacing="16">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <FontIcon Glyph="&#xE7E8;" FontSize="20" />
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock Text="Start with Windows" />
+                            <TextBlock Text="Run the background service when you sign in." Style="{StaticResource SettingsDescriptionStyle}" />
+                        </StackPanel>
+                        <ToggleSwitch x:Name="StartupToggle" Grid.Column="2" MinWidth="0" Toggled="StartupToggle_Toggled" />
+                    </Grid>
+                </Border>
+
+                <TextBlock Text="Volume" Style="{StaticResource SettingsSectionStyle}" />
+
+                <Border Style="{StaticResource SettingsCardStyle}">
+                    <Grid ColumnSpacing="16">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <FontIcon Glyph="&#xE995;" FontSize="20" />
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock Text="Scroll on the volume icon" />
+                            <TextBlock Text="Scroll over the taskbar volume icon to change the volume. The level shows up in the middle of the screen." Style="{StaticResource SettingsDescriptionStyle}" />
+                        </StackPanel>
+                        <ToggleSwitch x:Name="VolumeScrollToggle" Grid.Column="2" MinWidth="0" Toggled="FeatureToggle_Toggled" />
+                    </Grid>
+                </Border>
+
+                <Border Style="{StaticResource SettingsCardStyle}">
+                    <Grid ColumnSpacing="16">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <FontIcon Glyph="&#xE74F;" FontSize="20" />
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock Text="Middle click to mute" />
+                            <TextBlock Text="Middle click the taskbar volume icon to mute or unmute." Style="{StaticResource SettingsDescriptionStyle}" />
+                        </StackPanel>
+                        <ToggleSwitch x:Name="MiddleClickMuteToggle" Grid.Column="2" MinWidth="0" Toggled="FeatureToggle_Toggled" />
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

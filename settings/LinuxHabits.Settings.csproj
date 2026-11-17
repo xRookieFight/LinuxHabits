@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>LinuxHabits.Settings</RootNamespace>
+    <AssemblyName>LinuxHabitsSettings</AssemblyName>
+    <Platforms>x64</Platforms>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>..\assets\linuxhabits.ico</ApplicationIcon>
+    <UseWinUI>true</UseWinUI>
+    <WindowsPackageType>None</WindowsPackageType>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <!-- Pulls the PRI build tasks from NuGet, without it `dotnet build` looks for them inside Visual Studio. -->
+    <EnableMsixTooling>true</EnableMsixTooling>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.250108002" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
+  </ItemGroup>
+
+  <!-- ApplicationIcon only covers the exe, the window icon is loaded from this file at runtime. -->
+  <ItemGroup>
+    <Content Include="..\assets\linuxhabits.ico" Link="linuxhabits.ico" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\assets\logo-256.png" Link="Assets\logo-256.png" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <!-- The settings app looks for the daemon next to itself, so ship the release build along. -->
+  <ItemGroup Condition="Exists('..\target\release\linuxhabits.exe')">
+    <Content Include="..\target\release\linuxhabits.exe" Link="linuxhabits.exe" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
